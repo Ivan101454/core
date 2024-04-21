@@ -47,6 +47,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return super.toString();
+        return this.firstName + " " + this.lastName + " " + this.age + " " + this.averageScore;
     }
+
+
 }
