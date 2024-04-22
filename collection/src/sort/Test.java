@@ -5,6 +5,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**Создать класс Student,представляющий собой ученика.Добавить ему данные об имени,фамилии,возрасте и среднем балле за год.
+*Создать список(List)учеников.Найти и вывести ученика с самым высоким средним баллом используя итератор.
+*Отсортировать и вывести список учеников по полному имени(имя+фамилия),возрасту и среднему баллу,используя компараторы.*/
+
+
 public class Test {
     public static void main(String[] args) {
         List<Student> students = Arrays.asList(new Student("Ivan", "Ivanovich", 20, 9.8),
