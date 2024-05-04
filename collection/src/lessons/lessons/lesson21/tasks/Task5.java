@@ -3,6 +3,10 @@ package lessons.lessons.lesson21.tasks;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toMap;
 
 /**
  * Дан класс Person с полями firstName, lastName, age.
@@ -20,10 +24,19 @@ public class Task5 {
         );
 
         persons.stream()
-                .filter(person -> person.getFullName().length() < 15 )
+                .filter(person -> person.getFullName().length() < 15)
                 .max(Comparator.comparing(Person::getAge))
                 .map(Person::getFullName)
                 .ifPresent(System.out::println);
+
+        Map<Integer, List<String>> collect = persons.stream()
+                .collect(Collectors.groupingBy(Person::getAge, Collectors.mapping(Person::getFullName, Collectors.toList())));
+
+        Map<Integer, Person> collect1 = persons.stream().collect(toMap(Person::getAge, Function.identity()));
+
+        System.out.println(collect1);
+        
+
     }
 
 
