@@ -35,7 +35,7 @@ public class Task5 {
         Map<Integer, Person> collect1 = persons.stream().collect(toMap(Person::getAge, Function.identity()));
 
         System.out.println(collect1);
-        
+
 
     }
 
